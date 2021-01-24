@@ -16,7 +16,7 @@ df = pd.DataFrame(data["data"])
 df["load_date"] = datetime.now()
 
 # Adding another County column, with removing spaces and period for better table naming "New York", "St. Lawrence"
-df["county"] = df[9].replace(" ", "").replace(".", "")
+df["county"] = df[9].str.replace(" ", "").str.replace(".", "")
 
 #Droping extra columns from Dataframe
 df.drop(range(0, 8), axis=1, inplace=True)
